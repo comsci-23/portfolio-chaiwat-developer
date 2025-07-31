@@ -1,0 +1,32 @@
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar .navbar-link {
+  color: #ffffffcc;
+  margin: 0 10px;
+  transition: opacity 0.3s;
+}
+
+.custom-navbar .navbar-link:hover,
+.custom-navbar .navbar-link.active {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.navbar-text .vvd {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 24px;
+  background: transparent;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.navbar-text .vvd:hover {
+  background: #fff;
+  color: #000;
+}
