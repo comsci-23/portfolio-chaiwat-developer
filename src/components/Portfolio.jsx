@@ -17,13 +17,12 @@ const Portfolio = () => {
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-primary mb-2 block text-lg font-semibold">Our Portfolio</span>
-                <h2 className="text-dark mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
-                  Our Recent Projects
-                </h2>
+                <span className="text-gray-900 mb-2 block text-lg font-semibold tracking-wide uppercase relative after:content-[''] after:block after:w-10 after:h-[2px] after:bg-gray-900 after:mt-1">
+                  Projects I Contributed To
+                </span>
+               
                 <p className="text-body-color text-base dark:text-dark-6">
-                  There are many variations of passages of Lorem Ipsum available but the majority have suffered
-                  alteration in some form.
+                  I contributed to these projects as a team member
                 </p>
               </div>
             </div>
@@ -35,11 +34,10 @@ const Portfolio = () => {
                 <li className="mb-1">
                   <button
                     onClick={() => handleProject("all")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "all"
+                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${showCard === "all"
                         ? "activeClasses bg-primary text-white"
                         : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
+                      }`}
                   >
                     All Projects
                   </button>
@@ -53,7 +51,7 @@ const Portfolio = () => {
               category="Mobile Application"
               title="TRR Family"
               button="View Details"
-              buttonHref="#"
+              buttonHref="https://apps.apple.com/th/app/trr-family/id6450155810"
               showCard={showCard}
             />
             <PortfolioCard
@@ -61,15 +59,15 @@ const Portfolio = () => {
               category="Mobile Application"
               title="TRR Kinphak"
               button="View Details"
-              buttonHref="#"
+              buttonHref="https://apps.apple.com/th/app/trr-kinphak/id1628873648"
               showCard={showCard}
             />
             <PortfolioCard
               ImageHref={Pod3}
               category="Mobile Application"
-              title="myAIS"
+              title="myAis"
               button="View Details"
-              buttonHref="#"
+              buttonHref="https://apps.apple.com/us/app/myais/id399758084"
               showCard={showCard}
             />
           </div>
@@ -85,9 +83,8 @@ const PortfolioCard = ({ showCard, category, ImageHref, title, button, buttonHre
   return (
     <>
       <div
-        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
-          showCard === "all" || showCard === category.toLowerCase() ? "block" : "hidden"
-        }`}
+        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${showCard === "all" || showCard === category.toLowerCase() ? "block" : "hidden"
+          }`}
       >
         <div className="relative mb-12">
           <div className="overflow-hidden rounded-[10px]">
