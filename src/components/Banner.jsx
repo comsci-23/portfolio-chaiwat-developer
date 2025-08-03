@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import headerImg from "../assets/img/header-img.jpg";
 import background from "../assets/img/background.png";
-
 import { ArrowRightCircle } from "react-bootstrap-icons";
 
 function Banner() {
@@ -9,9 +8,12 @@ function Banner() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [views, setViews] = useState(0);
+
   const toRotate = ["Programmer", "Full Stack Developer", "Software Engineer"];
   const period = 2000;
 
+  // Typing effect
   useEffect(() => {
     const ticker = setInterval(() => {
       tick();
@@ -23,7 +25,9 @@ function Banner() {
   const tick = () => {
     const i = loopNum % toRotate.length;
     const fullText = toRotate[i];
-    const updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    const updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
 
     setText(updatedText);
 
@@ -41,6 +45,14 @@ function Banner() {
     }
   };
 
+  // Count and store page views in localStorage
+  useEffect(() => {
+    const storedViews = parseInt(localStorage.getItem("pageViews") || "0");
+    const newViews = storedViews + 1;
+    localStorage.setItem("pageViews", newViews.toString());
+    setViews(newViews);
+  }, []);
+
   return (
     <section
       id="home"
@@ -51,22 +63,28 @@ function Banner() {
         {/* Left: Text */}
         <div className="text-white md:w-2/3">
           <span className="inline-block font-bold text-lg mb-4 px-3 py-1 border border-white bg-gradient-to-r from-[#AA367C80] to-[#4A2FBD80]">
-            Welcome to my Portfolio
+            Welcome to my Portfolio <span className="text-white">{views}</span> views
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Hi! I'm Chaiwat <span className="txt-rotate border-r-2 border-gray-500 pr-1">{text}</span>
+            Hi! I'm Chaiwat{" "}
+            <span className="txt-rotate border-r-2 border-gray-500 pr-1">{text}</span>
           </h1>
           <p className="text-[#B8B8B8] text-lg leading-relaxed w-full md:w-[96%]">
-            Hello There! Allow me to introduce myself. Chaiwat Sasithonratsame is my name. I work as a Software
-            Developer based in Bangkok. If you have any questions or topics about software development or anything else,
-            I'd be delighted to share my expertise and experiences with you !
+            Hello There! Allow me to introduce myself. Chaiwat Sasithonratsame is my name.
+            I work as a Software Developer based in Bangkok. If you have any questions or
+            topics about software development or anything else, I'd be delighted to share
+            my expertise and experiences with you!
           </p>
-          <a
-            href="https://www.linkedin.com/in/chaiwat-sasithonratsame-614a8826b/"
-            className="inline-flex items-center font-bold text-white text-xl mt-10 hover:opacity-80 transition"
-          >
-            Let’s Connect <ArrowRightCircle size={25} className="ml-3 transition-all group-hover:ml-6" />
-          </a>
+
+          {/* Button */}
+          <div className="mt-10">
+            <a
+              href="https://www.linkedin.com/in/chaiwat-sasithonratsame-614a8826b/"
+              className="inline-flex items-center font-bold text-white text-xl hover:opacity-80 transition"
+            >
+              Let’s Connect <ArrowRightCircle size={25} className="ml-3 transition-all group-hover:ml-6" />
+            </a>
+          </div>
         </div>
 
         {/* Right: Image */}
