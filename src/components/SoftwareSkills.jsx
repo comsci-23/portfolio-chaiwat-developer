@@ -1,5 +1,5 @@
 import { FaGithub, FaDocker, FaAndroid, FaGitAlt, FaFigma, FaDatabase } from "react-icons/fa";
-import { SiFirebase, SiXcode, SiJira, } from "react-icons/si";
+import { SiFirebase, SiXcode, SiJira, SiRealm} from "react-icons/si";
 
 const softwareSkills = [
   { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
@@ -11,6 +11,7 @@ const softwareSkills = [
   { name: "Docker", icon: <FaDocker className="text-blue-400" /> },
   { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
   { name: "Database Management", icon: <FaDatabase className="text-blue-600" /> },
+  { name: "Realm", icon: <SiRealm className="text-green-700" /> },
 ];
 
 const SoftwareSkills = () => {
@@ -25,7 +26,7 @@ const SoftwareSkills = () => {
           {softwareSkills.map((tool, index) => (
             <div
               key={index}
-              className="bg-[#1e293b] hover:bg-[#334155] transition-all rounded-xl p-6 flex flex-col items-center shadow-md hover:shadow-xl"
+              className="bg-[#1e293b] transition-all rounded-xl p-6 flex flex-col items-center shadow-md"
             >
               <div className="text-4xl mb-3">{tool.icon}</div>
               <p className="text-white font-medium text-center">{tool.name}</p>
