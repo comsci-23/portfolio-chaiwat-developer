@@ -1,2 +1,4 @@
 # My Project 
-landing page
+
+
+React + tailwindcss landing page
