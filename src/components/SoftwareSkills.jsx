@@ -1,5 +1,5 @@
 import { FaGithub, FaDocker, FaAndroid, FaGitAlt, FaFigma, FaDatabase } from "react-icons/fa";
-import { SiFirebase, SiXcode, SiJira, SiRealm} from "react-icons/si";
+import { SiFirebase, SiXcode, SiJira, SiRealm } from "react-icons/si";
 
 const softwareSkills = [
   { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
@@ -20,7 +20,7 @@ const SoftwareSkills = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">🛠 Software Tools</h2>
         <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
-          Tools I use daily for development, testing, and deployment.
+          Tools I regularly use for development, collaboration, and deployment.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {softwareSkills.map((tool, index) => (
