@@ -29,7 +29,7 @@ const DevSkills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-[#1e293b] hover:bg-[#334155] transition-all rounded-xl p-6 flex flex-col items-center shadow-md hover:shadow-xl"
+              className="bg-[#1e293b] transition-all rounded-xl p-6 flex flex-col items-center shadow-md"
             >
               <div className="text-4xl mb-3">{skill.icon}</div>
               <p className="text-white font-medium">{skill.name}</p>
