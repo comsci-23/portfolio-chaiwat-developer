@@ -26,7 +26,7 @@ function Navbar() {
 
           {/* Download CV */}
           {/* <a href="https://drive.google.com/file/d/1pp-aL3XT56rVmR_uWTXv6eDoGOqinv10/edit"> */}
-          <a href="https://drive.google.com/file/d/1OkW5WZerLCMuYEn1lKWrN7nTXabEWfzw/view?usp=sharing">
+          <a href="https://drive.google.com/file/d/15fXn4nRz59DCJ18QuwZUWrXxTDT9o0sb/view?usp=sharing">
             <button className="text-white border border-white py-2 px-5 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
               <span>Download CV</span>
             </button>
