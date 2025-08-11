@@ -1,5 +1,5 @@
 import { FaGithub, FaDocker, FaAndroid, FaGitAlt, FaFigma, FaDatabase } from "react-icons/fa";
-import { SiFirebase, SiXcode, SiJira, SiRealm } from "react-icons/si";
+import { SiFirebase, SiXcode, SiJira, SiRealm, SiPostman } from "react-icons/si";
 
 const softwareSkills = [
   { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
@@ -12,6 +12,7 @@ const softwareSkills = [
   { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
   { name: "Database Management", icon: <FaDatabase className="text-blue-600" /> },
   { name: "Realm", icon: <SiRealm className="text-green-700" /> },
+  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
 ];
 
 const SoftwareSkills = () => {
