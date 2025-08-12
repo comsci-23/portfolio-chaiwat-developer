@@ -7,10 +7,10 @@ const TechIntroSection = () => {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
-            📖 My Tech Philosophy
+            📖 Every line of code has a story.
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Every line of code has a story. Here's mine — thoughts, tools, and journeys I’ve documented as a software engineer.
+            Here's mine — thoughts, tools, and journeys I’ve documented as a software engineer.
           </p>
         </div>
 
