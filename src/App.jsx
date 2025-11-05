@@ -17,7 +17,7 @@ function App() {
       <DevSkills />
       <SoftwareSkills />
       <Portfolio />
-      <TechIntroSection />
+      {/* <TechIntroSection /> */}
       <Footer />
     </>
   );
