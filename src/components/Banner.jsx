@@ -53,6 +53,24 @@ function Banner() {
     setViews(newViews);
   }, []);
 
+  useEffect(() => {
+    const updateViews = async () => {
+      try {
+        // เพิ่มจำนวน view +1
+        await fetch("https://api.countapi.xyz/hit/chaiwat-portfolio/home");
+
+        // ดึงจำนวน view ปัจจุบัน
+        const res = await fetch("https://api.countapi.xyz/get/chaiwat-portfolio/home");
+        const data = await res.json();
+        setViews(data.value);
+      } catch (error) {
+        console.error("Error fetching view count:", error);
+      }
+    };
+
+    updateViews();
+  }, []);
+
   return (
     <section
       id="home"
@@ -62,20 +80,19 @@ function Banner() {
       <div className="container mx-auto px-5 max-w-7xl flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Left: Text */}
         <div className="text-white md:w-2/3">
-          <span className="inline-block font-bold text-lg mb-4 px-3 py-1 border border-white bg-gradient-to-r from-[#AA367C80] to-[#4A2FBD80]">
-            Welcome to my Portfolio <span className="text-white">{views}</span> views
-          </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Hi! I'm Chaiwat{" "}
             <span className="txt-rotate border-r-2 border-gray-500 pr-1">{text}</span>
           </h1>
-          <p className="text-[#B8B8B8] text-lg leading-relaxed w-full md:w-[96%]">
+          <span className="inline-block font-bold text-lg mb-4 px-3 py-1 border border-white bg-gradient-to-r from-[#AA367C80] to-[#4A2FBD80]">
+            Welcome to my Portfolio {views.toLocaleString()} views
+          </span>
+          <span className="inline-block font-bold text-lg mb-4 px-3 py-1 border border-white bg-gradient-to-r from-[#AA367C80] to-[#4A2FBD80]">
             Hello There! Allow me to introduce myself. Chaiwat Sasithonratsame is my name.
             I work as a Software Developer based in Bangkok. If you have any questions or
             topics about software development or anything else, I'd be delighted to share
             my expertise and experiences with you!
-          </p>
-
+          </span>
           {/* Button */}
           <div className="mt-10">
             <a
