@@ -18,6 +18,7 @@ function App() {
       <SoftwareSkills />
       <Portfolio />
       {/* <TechIntroSection /> */}
+      {/* <SpinningCube /> */}
       <Footer />
     </>
   );
