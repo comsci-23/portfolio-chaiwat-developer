@@ -32,7 +32,7 @@ function Navbar() {
             </button>
           </a>
 
-          <a href="myapp://register?token=abc123&userId=42">
+          <a href="myapp://checkout">
             <button className="text-white border border-white py-2 px-5 rounded-full transition-all duration-300 hover:bg-white hover:text-black">
               <span>Deep Link</span>
             </button>
