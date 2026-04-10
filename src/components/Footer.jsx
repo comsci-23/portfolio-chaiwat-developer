@@ -4,14 +4,14 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="bg-[#0b0b0f] text-white border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6 relative">
         {/* Left */}
-        <div className="text-center md:text-center">
+        <div className="text-center md:absolute md:left-1/2 md:-translate-x-1/2">
           <p className="text-sm text-gray-500">© {new Date().getFullYear()} Chaiwat Sasithonratsame</p>
         </div>
 
         {/* Right */}
-        <div className="flex items-center gap-6">
+        {/* <div className="flex items-center gap-6">
           <a
             href="https://github.com/comsci-23"
             target="_blank"
@@ -29,7 +29,7 @@ function Footer() {
           >
             <FaLinkedin size={20} />
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

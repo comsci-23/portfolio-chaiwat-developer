@@ -5,15 +5,16 @@ function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 h-[60px] md:h-[65px] flex items-center justify-between">
-        
         {/* LEFT */}
-        <div className="text-white text-sm tracking-wide font-medium">
+        {/* <div className="text-white text-sm tracking-wide font-medium">
           Chaiwat
+        </div> */}
+        <div className="text-white text-sm tracking-wide font-medium hover:opacity-70 transition cursor-pointer">
+          chaiwat.dev
         </div>
 
         {/* RIGHT */}
         <div className="flex items-center gap-4 md:gap-6">
-
           {/* Divider (ซ่อนใน mobile) */}
           <div className="hidden md:block w-px h-5 bg-white/10"></div>
 
@@ -34,7 +35,6 @@ function Navbar() {
           >
             <FaGithub size={18} />
           </a>
-
         </div>
       </div>
     </nav>

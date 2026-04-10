@@ -8,7 +8,7 @@ function Banner() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(120);
-  const [views, setViews] = useState(0);
+  // views removed per user request
 
   const toRotate = ["Programmer", "Full Stack Developer", "Software Engineer"];
   const period = 1800;
@@ -39,60 +39,17 @@ function Banner() {
     }
   };
 
-  // ✅ REAL VIEW (CountAPI + กัน refresh spam)
-  useEffect(() => {
-    const namespace = "chaiwat-portfolio";
-    const key = "views";
-
-    const viewed = sessionStorage.getItem("viewed");
-
-    if (!viewed) {
-      // เพิ่ม view (เฉพาะครั้งแรกของ session)
-      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setViews(data.value);
-          sessionStorage.setItem("viewed", "true");
-        })
-        .catch(() => setViews(0));
-    } else {
-      // แค่ดึงค่า view
-      fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
-        .then((res) => res.json())
-        .then((data) => setViews(data.value))
-        .catch(() => setViews(0));
-    }
-  }, []);
-
-  useEffect(() => {
-    const updateViews = async () => {
-      try {
-        // เพิ่มจำนวน view +1
-        await fetch("https://api.countapi.xyz/hit/chaiwat-portfolio/home");
-
-        // ดึงจำนวน view ปัจจุบัน
-        const res = await fetch("https://api.countapi.xyz/get/chaiwat-portfolio/home");
-        const data = await res.json();
-        setViews(data.value);
-      } catch (error) {
-        console.error("Error fetching view count:", error);
-      }
-    };
-
-    updateViews();
-  }, []);
+  // view/count removed per user request
 
   return (
-    <section className="min-h-screen flex items-center bg-[#0b0b0f] text-white px-6 relative overflow-hidden">
+    <section className="min-h-screen flex items-center bg-[#0b0b0f] text-white px-6 pt-[60px] md:pt-[65px] relative overflow-hidden">
       {/* background glow */}
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-white/5 blur-[120px] rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
         {/* LEFT */}
         <div>
-          <div className="mb-6 text-sm tracking-wide text-gray-400 backdrop-blur-md bg-white/5 inline-block px-4 py-1 rounded-full border border-white/10">
-            {views} views • Portfolio
-          </div>
+          {/* small header pill removed per request */}
 
           <h1 className="text-5xl md:text-6xl font-semibold leading-tight mb-6">
             Hi, I’m Chaiwat
@@ -133,14 +90,7 @@ function Banner() {
                 <img
                   src={headerImg}
                   alt="profile"
-                  className="
-                    w-[260px]
-                    h-[260px]
-                    object-cover
-                    scale-[1.02]
-                    hover:scale-[1.06]
-                    transition duration-700 ease-out
-                  "
+                  className="w-[200px] h-[200px] md:w-[260px] md:h-[260px] object-cover scale-[1.02] hover:scale-[1.06] transition duration-700 ease-out"
                 />
               </div>
             </div>
