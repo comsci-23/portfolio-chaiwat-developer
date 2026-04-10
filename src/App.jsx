@@ -3,6 +3,7 @@ import Banner from "./components/Banner";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import DevSkills from "./components/DevSkills";
+import Education from "./components/Education";
 import SoftwareSkills from "./components/SoftwareSkills";
 import TechIntroSection from "./components/TechIntroSection";
 
@@ -14,10 +15,11 @@ function App() {
     <>
       <Navbar />
       <Banner />
+      <Education />
       <DevSkills />
       <SoftwareSkills />
-      <Portfolio />
-      {/* <TechIntroSection /> */}
+
+      {/* <Portfolio /> */}
       <Footer />
     </>
   );

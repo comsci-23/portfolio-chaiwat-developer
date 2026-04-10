@@ -1,38 +1,65 @@
-import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaPhp, FaPython, FaJava,  } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiFlutter, SiDart, SiBootstrap ,SiJson,} from "react-icons/si";
+import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaPhp, FaPython, FaJava } from "react-icons/fa";
+import { SiTailwindcss, SiJavascript, SiFlutter, SiDart, SiBootstrap, SiJson } from "react-icons/si";
 
 const skills = [
-  { name: "Dart", icon: <SiDart className="text-blue-400" /> },
-  { name: "Flutter", icon: <SiFlutter className="text-blue-500" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-  { name: "MySQL", icon: <FaDatabase className="text-blue-600" /> },
-  { name: "React", icon: <FaReact className="text-sky-400" /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500" /> },
-  { name: "JavaScript", icon: <SiJavascript className="text-yellow-400" /> },
-  { name: "PHP", icon: <FaPhp className="text-indigo-500" /> },
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500" /> },
-  { name: "Python", icon: <FaPython className="text-yellow-500" /> },
-  { name: "Java", icon: <FaJava className="text-red-500" /> },
-  { name: "JSON", icon: <SiJson className="text-gray-400" /> },
+  { name: "Dart", icon: <SiDart /> },
+  { name: "Flutter", icon: <SiFlutter /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "MySQL", icon: <FaDatabase /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  { name: "JavaScript", icon: <SiJavascript /> },
+  { name: "PHP", icon: <FaPhp /> },
+  { name: "HTML", icon: <FaHtml5 /> },
+  { name: "CSS", icon: <FaCss3Alt /> },
+  { name: "Bootstrap", icon: <SiBootstrap /> },
+  { name: "Python", icon: <FaPython /> },
+  { name: "Java", icon: <FaJava /> },
+  { name: "JSON", icon: <SiJson /> },
+
+  {
+    name: "C",
+    icon: <span className="text-lg font-semibold">C</span>,
+  },
+  {
+    name: "C#",
+    icon: <span className="text-lg font-semibold">C#</span>,
+  },
 ];
+
 const DevSkills = () => {
   return (
-    <section className="bg-[#0f172a] py-16">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">💻 Programming Skills</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
+    <section className="bg-[#0b0b0f] py-24 text-white">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6">Programming Skills</h2>
+
+        <p className="text-gray-500 max-w-xl mx-auto mb-16 text-lg">
           Here are some technologies I've been working with as a fullstack developer.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-[#1e293b] transition-all rounded-xl p-6 flex flex-col items-center shadow-md"
+              className="
+                group
+                rounded-2xl
+                border border-white/10
+                bg-white/5
+                backdrop-blur-xl
+                p-6
+                flex flex-col items-center
+                justify-center
+                transition-all duration-300
+                hover:bg-white/10
+                hover:scale-[1.03]
+              "
             >
-              <div className="text-4xl mb-3">{skill.icon}</div>
-              <p className="text-white font-medium">{skill.name}</p>
+              {/* Icon */}
+              <div className="text-3xl mb-3 text-white/70 group-hover:text-white transition">{skill.icon}</div>
+
+              {/* Name */}
+              <p className="text-sm text-gray-400 group-hover:text-white transition">{skill.name}</p>
             </div>
           ))}
         </div>
