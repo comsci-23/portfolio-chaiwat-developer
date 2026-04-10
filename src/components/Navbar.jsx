@@ -16,8 +16,17 @@ function Navbar() {
         {/* RIGHT */}
         <div className="flex items-center gap-4 md:gap-6">
           {/* Divider (ซ่อนใน mobile) */}
-          <div className="hidden md:block w-px h-5 bg-white/10"></div>
+          {/* <div className="hidden md:block w-px h-5 bg-white/10"></div> */}
+          {/* CTA */}
+          <span className="block md:hidden text-white/30">|</span>
 
+          <a
+            href="https://drive.google.com/file/d/15fXn4nRz59DCJ18QuwZUWrXxTDT9o0sb/view?usp=sharing"
+            className=" text-sm px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-80 transition "
+          >
+            {" "}
+            Download CV{" "}
+          </a>
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/chaiwat-sasithonratsame-614a8826b/"
@@ -25,7 +34,6 @@ function Navbar() {
           >
             <img src={navIcon1} alt="LinkedIn" className="w-5 h-5" />
           </a>
-
           {/* GitHub */}
           <a
             href="https://github.com/comsci-23"
