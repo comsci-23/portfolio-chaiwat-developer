@@ -20,13 +20,13 @@ function Navbar() {
           {/* CTA */}
           <span className="block md:hidden text-white/30">|</span>
 
-          <a
+          {/* <a
             href="https://drive.google.com/file/d/15fXn4nRz59DCJ18QuwZUWrXxTDT9o0sb/view?usp=sharing"
             className=" text-sm px-4 py-2 rounded-full bg-white text-black font-medium hover:opacity-80 transition "
           >
             {" "}
             Download CV{" "}
-          </a>
+          </a> */}
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/chaiwat-sasithonratsame-614a8826b/"
