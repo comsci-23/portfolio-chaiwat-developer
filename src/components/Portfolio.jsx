@@ -10,98 +10,142 @@ const Portfolio = () => {
     setShowCard(category);
   };
 
-  return (
-    <>
-      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-gray-900 mb-2 block text-lg font-semibold tracking-wide uppercase relative after:content-[''] after:block after:w-10 after:h-[2px] after:bg-gray-900 after:mt-1">
-                  Projects I Contributed To
-                </span>
-               
-                <p className="text-body-color text-base dark:text-dark-6">
-                  I contributed to these projects as a team member
-                </p>
-              </div>
-            </div>
-          </div>
+  const projects = [
+    {
+      image: Pod1,
+      category: "mobile",
+      label: "Mobile Application",
+      title: "TRR Family",
+      link: "https://apps.apple.com/th/app/trr-family/id6450155810",
+    },
+    {
+      image: Pod2,
+      category: "mobile",
+      label: "Mobile Application",
+      title: "TRR Kinphak",
+      link: "https://apps.apple.com/th/app/trr-kinphak/id1628873648",
+    },
+    {
+      image: Pod3,
+      category: "mobile",
+      label: "Mobile Application",
+      title: "myAIS",
+      link: "https://apps.apple.com/us/app/myais/id399758084",
+    },
+  ];
 
-          <div className="w-full flex flex-wrap justify-center -mx-4">
-            <div className="w-full px-4">
-              <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("all")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${showCard === "all"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                      }`}
-                  >
-                    All Projects
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-4">
-            <PortfolioCard
-              ImageHref={Pod1}
-              category="Mobile Application"
-              title="TRR Family"
-              button="View Details"
-              buttonHref="https://apps.apple.com/th/app/trr-family/id6450155810"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref={Pod2}
-              category="Mobile Application"
-              title="TRR Kinphak"
-              button="View Details"
-              buttonHref="https://apps.apple.com/th/app/trr-kinphak/id1628873648"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref={Pod3}
-              category="Mobile Application"
-              title="myAis"
-              button="View Details"
-              buttonHref="https://apps.apple.com/us/app/myais/id399758084"
-              showCard={showCard}
-            />
-          </div>
+  return (
+    <section className="pt-20 pb-16 md:pt-[120px] md:pb-[100px] bg-[#0b0b0f] text-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <span className="text-sm tracking-widest text-gray-400 uppercase">
+            Projects
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-semibold mt-3">
+            Projects I Contributed To
+          </h2>
+
+          <p className="text-gray-400 mt-4 text-sm md:text-base">
+            I contributed to these projects as a team member
+          </p>
         </div>
-      </section>
-    </>
+
+        {/* FILTER */}
+        <div className="flex justify-center mb-12">
+          <button
+            onClick={() => handleProject("all")}
+            className={`
+              px-6 py-2 rounded-full text-sm font-medium transition
+              ${
+                showCard === "all"
+                  ? "bg-white text-black"
+                  : "bg-white/5 text-white/60 hover:bg-white/10"
+              }
+            `}
+          >
+            All Projects
+          </button>
+        </div>
+
+        {/* GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects
+            .filter((item) => showCard === "all" || item.category === showCard)
+            .map((item, index) => (
+              <PortfolioCard key={index} item={item} />
+            ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Portfolio;
 
-const PortfolioCard = ({ showCard, category, ImageHref, title, button, buttonHref }) => {
+// ================= CARD =================
+
+const PortfolioCard = ({ item }) => {
   return (
-    <>
-      <div
-        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${showCard === "all" || showCard === category.toLowerCase() ? "block" : "hidden"
-          }`}
-      >
-        <div className="relative mb-12">
-          <div className="overflow-hidden rounded-[10px]">
-            <img src={ImageHref} alt="portfolio" className="w-full" />
-          </div>
-          <div className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
-            <span className="text-primary mb-2 block text-sm font-medium">{category}</span>
-            <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">{title}</h3>
-            <a
-              href={buttonHref}
-              className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
-            >
-              {button}
-            </a>
-          </div>
-        </div>
+    <div
+      className="
+        group
+        relative
+        rounded-2xl
+        overflow-hidden
+        bg-white/5
+        border border-white/10
+        backdrop-blur-xl
+        hover:bg-white/10
+        transition duration-500
+      "
+    >
+      {/* IMAGE */}
+      <div className="overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="
+            w-full h-[220px] object-cover
+            group-hover:scale-110
+            transition duration-700 ease-out
+          "
+        />
       </div>
-    </>
+
+      {/* CONTENT */}
+      <div className="p-6 text-center">
+        <span className="text-xs text-gray-400 uppercase tracking-wide">
+          {item.label}
+        </span>
+
+        <h3 className="text-lg font-semibold mt-2 mb-4">
+          {item.title}
+        </h3>
+
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            inline-block
+            px-5 py-2
+            rounded-full
+            text-sm font-medium
+            border border-white/20
+            text-white/80
+            hover:bg-white
+            hover:text-black
+            transition
+          "
+        >
+          View Details →
+        </a>
+      </div>
+
+      {/* 🔥 glow hover */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5"></div>
+    </div>
   );
 };

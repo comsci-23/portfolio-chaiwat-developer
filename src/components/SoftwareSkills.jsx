@@ -2,35 +2,53 @@ import { FaGithub, FaDocker, FaAndroid, FaGitAlt, FaFigma, FaDatabase } from "re
 import { SiFirebase, SiXcode, SiJira, SiRealm, SiPostman } from "react-icons/si";
 
 const softwareSkills = [
-  { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
-  { name: "GitHub", icon: <FaGithub className="text-gray-300" /> },
-  { name: "Firebase", icon: <SiFirebase className="text-orange-400" /> },
-  { name: "Jira", icon: <SiJira className="text-blue-500" /> },
-  { name: "Android Studio", icon: <FaAndroid className="text-green-500" /> },
-  { name: "XCode", icon: <SiXcode className="text-gray-300" /> },
-  { name: "Docker", icon: <FaDocker className="text-blue-400" /> },
-  { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
-  { name: "Database Management", icon: <FaDatabase className="text-blue-600" /> },
-  { name: "Realm", icon: <SiRealm className="text-green-700" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+  { name: "Git", icon: <FaGitAlt /> },
+  { name: "GitHub", icon: <FaGithub /> },
+  { name: "Firebase", icon: <SiFirebase /> },
+  { name: "Jira", icon: <SiJira /> },
+  { name: "Android Studio", icon: <FaAndroid /> },
+  { name: "Xcode", icon: <SiXcode /> },
+  { name: "Docker", icon: <FaDocker /> },
+  { name: "Figma", icon: <FaFigma /> },
+  { name: "Database", icon: <FaDatabase /> },
+  { name: "Realm", icon: <SiRealm /> },
 ];
 
 const SoftwareSkills = () => {
   return (
-    <section className="bg-[#0f172a] py-16">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">🛠 Software Tools</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
+    <section className="bg-[#0b0b0f] py-24 text-white">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6">Software Tools</h2>
+
+        <p className="text-gray-500 max-w-xl mx-auto mb-16 text-lg">
           Tools I regularly use for development, collaboration, and deployment.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+
+        {/* Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {softwareSkills.map((tool, index) => (
             <div
               key={index}
-              className="bg-[#1e293b] transition-all rounded-xl p-6 flex flex-col items-center shadow-md"
+              className="
+                group
+                rounded-2xl
+                border border-white/10
+                bg-white/5
+                backdrop-blur-xl
+                p-6
+                flex flex-col items-center
+                justify-center
+                transition-all duration-300
+                hover:bg-white/10
+                hover:scale-[1.03]
+              "
             >
-              <div className="text-4xl mb-3">{tool.icon}</div>
-              <p className="text-white font-medium text-center">{tool.name}</p>
+              {/* Icon */}
+              <div className="text-3xl mb-3 text-white/70 group-hover:text-white transition">{tool.icon}</div>
+
+              {/* Name */}
+              <p className="text-sm text-gray-400 group-hover:text-white transition text-center">{tool.name}</p>
             </div>
           ))}
         </div>
